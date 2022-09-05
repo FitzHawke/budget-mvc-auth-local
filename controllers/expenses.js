@@ -4,12 +4,12 @@ const Budget = require("../models/Budget");
 const createExpense = async (req, res, next) => {
   try {
     // Parse the data submitted in the form
-    let { amount } = req.body;
+    let { amount, description } = req.body;
     amount = Number(amount) * 100;
-    console.log({ amount});
+    console.log({ amount, description });
     const user = req.user;
     // Create a document in 'expenses' collection
-    await Expense.create({ amount, user: user.id });
+    await Expense.create({ amount, description, user: user.id });
 
     // Change the budget for the respective time period
     const budget = await Budget.findOne({ user: user.id });
@@ -78,7 +78,7 @@ const updateExpense = async (req, res) => { //need to add collapsable form next 
       await Budget.findOneAndUpdate(
         { _id: budget._id },
         {
-          remainingAmount: budget.remainingAmount + initialExpense.amount - newAmount
+          remainingAmount: budget.remainingAmount + initialExpense.amount - newAmount,
         }
       );
     }

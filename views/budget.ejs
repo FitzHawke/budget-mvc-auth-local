@@ -31,8 +31,8 @@
       </ul>
 
       <form action="/budget/create" method='POST'>
-        <label>Amount<input type="number" step="0.01" placeholder="Enter budget" name='initialAmount'></label>
-        <input type="submit">
+        <label>Amount<input type="number" step="0.01" placeholder="Enter additional budget" name='initialAmount'></label>
+        <input type="submit" value="Add to Budget">
       </form>
     </div>
 
@@ -43,12 +43,15 @@
           <li class='todoItem' data-id='<%=el._id%>'>
             <p>
               <%= (el.amount / 100).toFixed(2) %>
+              <%= el.description %>
             </p>
             <button class="updExpense">edit</button>
             <dialog id="updateExpenseDialog">
               <form method="dialog">
                 <label for="newAmount"> new amount</label>
                 <input id="newAmount"  type="number" step="0.01">
+                <label for="newDescription"> new description</label>
+                <input id="newDescription" type="text">
                 <button>Cancel</button>
                 <button id="saveNewAmountBtn">Save</button>
               </form>
@@ -59,8 +62,13 @@
       </ul>
 
       <form action="/expenses/create" method='POST'>
-        <label>Amount<input type="number" step="0.01" placeholder="Amount" name='amount'></label>
-        <input type="submit">
+        <label>Amount
+          <input type="number" step="0.01" placeholder="Amount" name='amount'>
+        </label>
+        <label> Description
+          <input type="text" id="description" name="description">
+        </label>
+        <input type="submit" value="Add Expense">
       </form>
     </div>
   </div>
