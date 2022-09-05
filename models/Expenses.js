@@ -6,6 +6,10 @@ const ExpenseSchema = new mongoose.Schema(
       type: Number, // store in cents to avoid rounding errors
       required: true,
     },
+    description: {
+      type: String, // store in cents to avoid rounding errors
+      required: false,
+    },
     // currency: {
     //   type: String,
     //   required: true,
