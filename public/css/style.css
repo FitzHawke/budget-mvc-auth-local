@@ -34,6 +34,14 @@ h1 {
   color: green;
 }
 
+.del{
+  margin-left: 1rem;
+  color: red;
+}
+
+::placeholder{
+  color: rgb(24, 219, 24);
+}
 .completed {
   text-decoration: line-through;
   color: gray;

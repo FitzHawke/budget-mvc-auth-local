@@ -11,14 +11,18 @@
     <% } %>
     <form action="/signup" method="POST">
         <div class="card-content">
+            <label for="userName">User Name</label>
             <input type="text" name="userName" placeholder="User Name">
+            <label for="email">Email</label>
             <input type="email" name="email" placeholder="Email">
+            <label for="password">Password</label>
             <input type="password" name="password" placeholder="Password">
+            <label for="confirmPassword"> Confirm</label>
             <input type="password" name="confirmPassword" placeholder="Confirm Password">
         </div>
         <div class="divider"></div>
         <div class="section center row">
-             <input class="btn green darken-2" type="submit" value="Signup">
+             <input class="btn light-green accent-4" type="submit" value="Signup">
         </div>
     </form>
 </div>
