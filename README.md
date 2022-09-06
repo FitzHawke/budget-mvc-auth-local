@@ -1,6 +1,13 @@
 ## Introduction
 
-A Simple Budget App built using the MVC Architecture and implementing "authorization" so folks can sign up, customize & personalize the app
+A Simple Budget App
+
+# Demo
+![team_budget1](https://user-images.githubusercontent.com/67307808/188751875-113a28bd-5aa1-4e19-9140-267b12599e14.gif)
+
+![team_budget](https://user-images.githubusercontent.com/67307808/188751869-2db12189-c8ea-4112-bcf0-73c5e05427c1.gif)
+
+https://budget-tracker-100devs.herokuapp.com/
 
 ---
 
@@ -8,21 +15,15 @@ A Simple Budget App built using the MVC Architecture and implementing "authoriza
 
 ---
 
-## Objectives
+## Features
 
--   It's a beginner level app created to understand how MVC concepts and logins are added
-
----
-
-## Who is this for?
-
--   It's for beginners & intermediates with little more experience, to help understand the various aspects of building a node app with some complex features
-
----
+- MVC Architecture
+- User authorization
+- Expense Tracking 
 
 ## Packages/Dependencies used
 
-bcrypt, connect-mongo, dotenv, ejs, express, express-flash, express-session, mongodb, mongoose, morgan, nodemon, passport, passport-local, validator, express-ejs-layouts
+bcrypt, connect-mongo, dotenv, ejs, express, express-session, mongodb, mongoose, morgan, nodemon, passport, passport-local, validator, express-ejs-layouts
 
 ---
 
