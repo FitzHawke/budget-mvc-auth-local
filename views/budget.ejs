@@ -50,8 +50,9 @@
     <div class="expenses card col s12 m5 offset-m1">
       <div class="card-content">
         <h1>Expenses</h1>
+        <ul>
         <% expenses.forEach( el=> { %>
-          <li class='todoItem' data-id='<%=el._id%>'>
+          <li data-id='<%=el._id%>'>
             <p>
               <%= (el.amount / 100).toFixed(2) %>
               <%= el.description %>
@@ -79,7 +80,7 @@
         <label> Description
           <input type="text" id="description" name="description">
         </label>
-        <input type="submit" value="Add Expense">
+        <input type="submit" class='btn green darken-2' value="Add Expense">
       </form>
       </div>
       </div>
