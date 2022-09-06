@@ -34,7 +34,6 @@ async function deleteBudget(){
             })
         })
         const data = await response.json()
-        console.log(data)
         location.reload()
     }catch(err){
         console.log(err)
@@ -44,7 +43,6 @@ async function deleteBudget(){
 async function deleteExpense(){
    
     const id = this.parentNode.dataset.id
-    console.log(id)
     try{
         const response = await fetch('expenses/delete', {
             method: 'delete',
@@ -54,7 +52,6 @@ async function deleteExpense(){
             })
         })
         const data = await response.json()
-        console.log(data)
         location.reload()
     }catch(err){
         console.log(err)
@@ -62,8 +59,6 @@ async function deleteExpense(){
 }
 
 async function updateExpense(){
-    console.log('updateExpense is running')
-
     const updateExpenseDialog = document.querySelector('#updateExpenseDialog')
     const newAmount = updateExpenseDialog.querySelector('#newAmount')
     const saveNewAmountBtn = updateExpenseDialog.querySelector('#saveNewAmountBtn')
@@ -91,7 +86,6 @@ async function updateExpense(){
                     })
                 })
                 const data = await response.json()
-                console.log(data)
                 location.reload()
             } catch(err) {
                 console.log(err)
@@ -101,8 +95,6 @@ async function updateExpense(){
 }
 
 async function updateBudget(){
-    console.log('updateBudget is running');
-
     const updateBudgetDialog = document.querySelector('#updateBudgetDialog')
     const newInitialAmount = updateBudgetDialog.querySelector('#newInitialAmount')
     const saveNewInitialAmountBtn = updateBudgetDialog.querySelector('#saveNewInitialAmountBtn')
@@ -129,7 +121,6 @@ async function updateBudget(){
                     })
                 })
                 const data = await response.json()
-                console.log(data)
                 location.reload()
             } catch(err) {
                 console.log(err)
