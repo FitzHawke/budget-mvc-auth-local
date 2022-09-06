@@ -5,7 +5,6 @@ const getBudget = async (req, res, next) => {
   try {
     const budget = await Budget.find({ user: req.user.id });
     const expenses = await Expense.find({ user: req.user.id });
-    console.log(budget)
 
     // const categories = req.user.categories;
     // const currencies = req.user.currencies;
@@ -35,7 +34,6 @@ const createBudget = async (req, res, next) => {
  
     // Total of the expenses
     const totalExpenses = expenses.reduce((a, e) => a + e.amount, 0);
-    console.log(`total: ${totalExpenses}`);
 
     //check to see if a budget already exists:
     const budget = await Budget.find({ user: req.user.id });
@@ -74,7 +72,6 @@ const updateBudget = async (req, res) => {
     // Find expenses
     const expenses = await Expense.find({ user: req.user.id });
     const totalExpenses = expenses.reduce((a, e) => a + e.amount, 0);
-    console.log(`total: ${totalExpenses}`);
 
     const updatedBudget = await Budget.findOneAndUpdate( //add edit functionality to budget page. Maybe add in collapsable div that hides and shows form?
       { _id: budgetId },

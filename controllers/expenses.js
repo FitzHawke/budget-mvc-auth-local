@@ -6,7 +6,6 @@ const createExpense = async (req, res, next) => {
     // Parse the data submitted in the form
     let { amount, description } = req.body;
     amount = Number(amount) * 100;
-    console.log({ amount, description });
     const user = req.user;
     // Create a document in 'expenses' collection
     await Expense.create({ amount, description, user: user.id });
@@ -18,8 +17,6 @@ const createExpense = async (req, res, next) => {
       //   // { startDate: { $lte: date } },
       //   // { endDate: { $gte: date } },
       // ],
-    console.log("Budget:");
-    console.log(budget);
     // Update remaining budget
     if (budget) {
       await Budget.findOneAndUpdate(
@@ -38,7 +35,6 @@ const createExpense = async (req, res, next) => {
 };
 
 const deleteExpense = async (req, res) => { //add trash can next to each expense in budget page.
-  console.log(req.user)
   try {
     const expense = await Expense.findOne({ _id: req.body.idFromJSFile });
 
