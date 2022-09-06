@@ -63,3 +63,24 @@ form {
   display: flex;
   flex-direction: column;
 }
+
+.bold{
+  font-weight: 700;
+}
+
+#updateExpenseDialog, #updateBudgetDialog{
+  background: rgb(236, 255, 198);
+  border: solid darkgreen;
+}
+
+input:focus{
+  border-bottom: solid 1px green !important;
+  box-shadow: 0 1px 0 0 darkgreen !important;
+} 
+
+label.active{
+  color: green !important;
+}
+.negativeFunds{
+  color: red;
+}

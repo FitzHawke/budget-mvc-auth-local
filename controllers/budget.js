@@ -10,7 +10,6 @@ const getBudget = async (req, res, next) => {
     // const categories = req.user.categories;
     // const currencies = req.user.currencies;
     // console.log(req.user.currencies);
-
     res.render("budget.ejs", {
       budget: budget,
       expenses: expenses,
