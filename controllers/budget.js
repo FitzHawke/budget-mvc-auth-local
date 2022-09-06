@@ -5,6 +5,7 @@ const getBudget = async (req, res, next) => {
   try {
     const budget = await Budget.find({ user: req.user.id });
     const expenses = await Expense.find({ user: req.user.id });
+    console.log(budget)
 
     // const categories = req.user.categories;
     // const currencies = req.user.currencies;
