@@ -67,7 +67,6 @@ async function updateExpense(){
     const updateExpenseDialog = document.querySelector('#updateExpenseDialog')
     const newAmount = updateExpenseDialog.querySelector('#newAmount')
     const saveNewAmountBtn = updateExpenseDialog.querySelector('#saveNewAmountBtn')
-
     // show modal window
     updateExpenseDialog.showModal();
 
@@ -78,6 +77,7 @@ async function updateExpense(){
 
     // create a put request only after the dialog is closed and has a value
     updateExpenseDialog.addEventListener('close', async () => {
+        const newExpenseDescription = updateExpenseDialog.querySelector('#newDescription').value
         const id = this.parentNode.dataset.id // since it's an arrow function, the value of 'this' is borrowed from the nearest outer function - updateBudget
         // if no value was provided and saved, or cancel button pressed, the dialog returnValue is empty string and the request is not made
         if (updateExpenseDialog.returnValue) {
@@ -86,7 +86,8 @@ async function updateExpense(){
                     method: 'put',
                     headers: {'Content-type': 'application/json'},
                     body: JSON.stringify({
-                        'amount': updateExpenseDialog.returnValue
+                        'amount': updateExpenseDialog.returnValue,
+                        'desc': newExpenseDescription,
                     })
                 })
                 const data = await response.json()

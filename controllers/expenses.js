@@ -67,9 +67,9 @@ const deleteExpense = async (req, res) => { //add trash can next to each expense
 
 const updateExpense = async (req, res) => { //need to add collapsable form next to each expense in budget page.
   try {
-    const expenseId = req.params.id;
+    const expenseId = req.params.id; //getting expense id from params
     const newAmount = Number(req.body.amount) * 100
-
+    const newDescription = req.body.desc
     const initialExpense = await Expense.findOne({ _id: expenseId, user: req.user.id });
 
     // Update budget
@@ -86,11 +86,12 @@ const updateExpense = async (req, res) => { //need to add collapsable form next 
     // transaction object
     const update = {
       amount: newAmount,
+      description: newDescription, 
       user: req.user.id,
     }
 
     const editedExpense = await Expense.findOneAndUpdate( {_id: expenseId}, update, {new: true} );
-
+    
     console.log("Expense has been updated and budget adjusted!");
     res.json(editedExpense);
   } catch (err) {
